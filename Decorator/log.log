@@ -1,0 +1,5 @@
+2017-09-05 11:37:52,778 logger.py[line:19] DEBUG debug message
+2017-09-05 11:37:52,778 logger.py[line:20] INFO info message
+2017-09-05 11:37:52,779 logger.py[line:21] WARNING warn message
+2017-09-05 11:37:52,780 logger.py[line:22] ERROR error message
+2017-09-05 11:37:52,780 logger.py[line:23] CRITICAL critical message
