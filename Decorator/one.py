@@ -7,11 +7,15 @@
 #########################################################################
 
 #/usr/bin/python
-import logging, time
+import logging, logging.config
+logging.config.fileConfig("./logging.conf")
+logger_name = "example"
+logger = logging.getLogger(logger_name)
+
 def use_logging(func):
     logging.basicConfig(level=logging.INFO)
     def wrapper(*args, **kwargs):
-        logging.info("%s: %s in running..." % (time.strftime('%F %T', time.localtime()), func.__name__))
+        logging.info("%s in running..." % func)
         return func(*args, *kwargs)
     return wrapper
 

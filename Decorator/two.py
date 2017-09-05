@@ -7,14 +7,17 @@
 #########################################################################
 
 #/usr/bin/python
-import logging
-def use_logging(func):
-    def wrapper(*args, **kwargs):
-        logging.warn("%s in running..." % func.__name__)
-        return func(*args)
-    return wrapper
+import logging,functools
+def use_logging(text=''):
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            logging.warn("%s in running...%s" % (func.__name__, text))
+            return func(*args, **kwargs)
+        return wrapper
+    return decorator
 
-@use_logging
+@use_logging('fdsfsdfsdfs')
 def foo():
     print('Hell world!')
     #logging.warn('foo is running...')
