@@ -3,3 +3,4 @@
 .bashrc
 .ipython
 *.log
+.bash_history
