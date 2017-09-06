@@ -22,7 +22,7 @@ def disk_info():
 def memory_info():
     memory={}
     memory['mem_total'] = commands.getstatusoutput("free -m | grep -i mem | awk {'print $2'}")[1] + ' MB'
-    memory['mem_used'] = commands.getstatusoutput("free -m | grep -i '^-' | awk {'print $3'}")[1] + ' MB'
+    memory['mem_used'] = commands.getstatusoutput("free -m | grep -i 'mem' | awk {'print $3'}")[1] + ' MB'
     print memory
 def ip_info():
     dev = []
