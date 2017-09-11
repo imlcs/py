@@ -4,3 +4,4 @@
 .ipython
 *.log
 .bash_history
+__pycache__
