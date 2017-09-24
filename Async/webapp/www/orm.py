@@ -31,6 +31,13 @@ async def crate_pool(loop, **kw):
         loop = loop
     )
 
+async def close_pool():
+    '异步关闭连接池'
+    logging.info('close database connection pool...')
+    global __pool
+    __pool.close()
+    await __pool.wait_close()
+
 async def select(sql, args, size=None):
     log(sql, args)
     global __pool
@@ -81,7 +88,7 @@ class Field(object):
 class StringField(Field):
     
     def __init__(self, name=None, primary_key = False, default = None, ddl="varchar(100)"):
-        super.__init__(name, ddl, primary_key, default)
+        super().__init__(name, ddl, primary_key, default)
     
 class BooleanField(Field):
 
@@ -112,18 +119,18 @@ class ModelMetaClass(type):
         mappings = dict()
         fields = []
         primaryKey = None
-        for k, v in arrts.items():
+        for k, v in attrs.items():
             if isinstance(v, Field):
                 logging.info('   Found mapping: %s => %s' % (k, v))
                 mappings[k] = v
                 if v.primary_key:
                     # 找到主键
                     if primaryKey:
-                        raise StandardError('Duplicate primary key fo field: %s' % k)
+                        raise BaseException('Duplicate primary key fo field: %s' % k)
                 else:
                     fields.append(k)
         if not primaryKey:
-            raise StandardError('Primary key not found.')
+            raise BaseException('Primary key not found.')
         for k in mappings.keys():
             attrs.pop(k)
         escaped_fields = list(map(lambda f:'`%s`' %f, fields))
