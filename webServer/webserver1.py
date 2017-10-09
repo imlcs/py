@@ -5,8 +5,6 @@
 #  Mail: liuchengsheng95@qq.com
 #  Created Time: 2017-08-22 23:02:29
 #########################################################################
-
-#/usr/bin/python
 import socket
 
 HOST_PORT = ('',80)
@@ -18,15 +16,15 @@ listen_socket.listen(1)
 
 print('Servring HTTP on port %s ...' % HOST_PORT[1])
 while True:
-	client_connection, client_address = listen_socket.accept()
-	request = client_connection.recv(1024).decode()
-	print(request)
+    client_connection, client_address = listen_socket.accept()
+    request = client_connection.recv(1024).decode()
+    print(request)
 
-	http_response = """\
+    http_response = """\
 HTTP/1.1 200 OK
 
 Hello World!
 """
 
-	client_connection.sendall(http_response.encode())
-	client_connection.close()
+    client_connection.sendall(http_response.encode())
+    client_connection.close()
