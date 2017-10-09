@@ -5,12 +5,14 @@
 #  Mail: liuchengsheng95@qq.com
 #  Created Time: 2017-08-22 23:02:29
 #########################################################################
+
+# /usr/bin/python
 import socket
 
-HOST_PORT = ('',80)
+HOST_PORT = ('', 80)
 
-listen_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-listen_socket.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)
+listen_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+listen_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 listen_socket.bind(HOST_PORT)
 listen_socket.listen(1)
 
