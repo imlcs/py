@@ -1,0 +1,6 @@
+itchat
+jieba
+matplotlib
+wordcloud
+numpy
+PIL
