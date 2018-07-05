@@ -1,0 +1,5 @@
+
+dn: uid={{username}},ou=gitlab,dc=kqc,dc=cc
+changetype: modify
+replace: userPassword
+userPassword: {{password}}

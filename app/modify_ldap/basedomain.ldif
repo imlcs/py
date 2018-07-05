@@ -1,0 +1,7 @@
+dn: ou=gitlab,dc=kqc,dc=cc
+objectClass: organizationalUnit
+ou: gitlab
+
+dn: ou=redmine,dc=kqc,dc=cc
+objectClass: organizationalUnit
+ou: redmine

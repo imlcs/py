@@ -1,0 +1,5 @@
+
+dn: uid=liuchengsheng,ou=gitlab,dc=kqc,dc=cc
+changetype: modify
+replace: userPassword
+userPassword: {SSHA}5uZ/WCADQRqcVy1upDL/LBdelFgqz79a

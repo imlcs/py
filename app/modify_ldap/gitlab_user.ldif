@@ -1,0 +1,16 @@
+
+dn: uid=donglei,ou=gitlab,dc=kqc,dc=cc
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: donglei
+cn: 董磊
+sn: 磊
+givenName: 董
+mail: donglei@kuaiqiangche.cc
+userPassword: {SSHA}vQigsYcBh2AhLnMZG20mTGcHkeFtQj7d
+loginShell: /bin/bash
+uidNumber: 1131
+gidNumber: 1131
+homeDirectory: /home/users/donglei
+

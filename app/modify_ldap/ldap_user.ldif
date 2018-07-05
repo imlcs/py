@@ -1,0 +1,18 @@
+
+# create new
+# replace to your own domain name for "dc=***,dc=***" section
+dn: uid=libai,ou=gitlab,dc=kqc,dc=cc
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: libai
+cn: 李白
+sn: 白
+givenName: 李
+mail: libai@kuaiqiangche.com
+userPassword: {SSHA}arBWn7LDfvwT5U2NqDnczT5ROTqM6AlO
+loginShell: /bin/bash
+uidNumber: 1000
+gidNumber: 1000
+homeDirectory: /home/users/libai
+
